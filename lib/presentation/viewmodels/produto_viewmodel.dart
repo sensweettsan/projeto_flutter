@@ -36,6 +36,13 @@ class ProdutoViewModel with ChangeNotifier {
     notifyListeners();
   }
 
+  try{
+    var resposta = await _produtoRepository.fetchProdutos(page: _paginaAtual);
+    _produtos = resposta['produtos'];
+
+    // verifica se há mais páginas
+  }
+
 
 
 }
